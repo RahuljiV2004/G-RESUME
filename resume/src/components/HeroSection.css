@@ -1,0 +1,228 @@
+/* 
+   .hero-section {
+    padding: 50px;
+    text-align: center;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3em;
+    color: #ffffff;
+  }
+  
+  .hero-content p {
+    color: #ffffff;
+    font-size: 1.2em;
+  }
+  
+  .cta-button {
+    background-color: #3de1d9;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    color: #110a0a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size:larger;
+    margin: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .cta-button:hover {
+    background: #0056b3;
+  }
+  
+  .hero-image img {
+    max-width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  } */
+
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 5rem;
+    background-color: #000000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-wrap: wrap;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+    text-align: left;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    color: #fff;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    color: #97e2ef;
+    margin: 2rem 0;
+    margin-right: 2px;
+  }
+  
+  .cta-button {
+    background-color: #3de1d9;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    color: #110a0a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: larger;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .cta-button:hover {
+    background-color: #3399ff;
+  }
+  
+  .hero-image {
+    max-width: 45%;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .reviews-section {
+    padding: 50px;
+    background: #000000;
+    text-align: center;
+    
+  }
+  
+  .companies h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .logos img {
+    max-height: 40px;
+    margin: 0 15px;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  
+  .logos img:hover {
+    opacity: 1;
+  }
+  
+  .reviews h2 {
+    font-size: 2em;
+    margin: 40px 0;
+    color: #ffffff;
+  }
+  
+  .review-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .review-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .review-card h4 {
+    color: #333;
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .review-card p {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .review-card .stars {
+    color: #4caf50;
+    font-size: 1.2em;
+  }
+  
+  .review-card span {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+    font-size: 0.8em;
+  }
+  
+  .job-description {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #2e2e30;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: rgb(28, 219, 175);
+    resize: none;
+  }
+
+  .cover-letter-section {
+    background-color: #000000;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .cover-letter-section:hover {
+    transform: scale(1.02);
+  }
+  
+  .cover-letter-section h2 {
+    color: #9eebd9;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff6f61;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .cover-letter-section pre {
+    background-color: #1c1c21;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  
