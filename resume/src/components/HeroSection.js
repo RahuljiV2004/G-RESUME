@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import './HeroSection.css';
 import bookingLogo from './images/booking-logo.webp';
@@ -9,6 +8,7 @@ import amazonLogo from './images/bny.png';
 import amexLogo from './images/unnamed.webp';
 import axios from 'axios';
 import jsPDF from 'jspdf';
+import { useNavigate } from 'react-router-dom'; 
 
 const HeroSection = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -16,7 +16,11 @@ const HeroSection = () => {
   const [coverLetter, setCoverLetter] = useState('');
   const [enhancedResume, setEnhancedResume] = useState('');
   const [uploading, setUploading] = useState(false);
+  const navigate = useNavigate(); // Initialize navigation
 
+  const handleGoToInterview = () => {
+    navigate('/mock-interview'); // Navigate to mock interview page
+  };
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file && file.type === 'application/pdf') {
@@ -44,7 +48,7 @@ const HeroSection = () => {
 
     setUploading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/upload-resume/', formData, {
+      const response = await axios.post('http://127.0.0.1:8000/resume/upload/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -168,6 +172,15 @@ const HeroSection = () => {
           <div className="resume-content">{enhancedResume}</div>
           <button className="download-button" onClick={() => downloadPDF('enhanced_resume.pdf', enhancedResume)}>Download Enhanced Resume as PDF</button>
         </section>
+      )}
+
+      {/* Conditionally Render Interview Button at Bottom */}
+      {(coverLetter && enhancedResume) && (
+        <div className="interview-button-container">
+          <button className="cta-button interview-button" onClick={handleGoToInterview}>
+            Go to Mock Interview
+          </button>
+        </div>
       )}
     </>
   );
