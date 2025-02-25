@@ -223,6 +223,54 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+  .enhanced-resume-section {
+    background-color: #000000; /* bg-gray-900 */
+    color: #56dde4; /* text-white */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* shadow-lg */
+    max-width: 64rem; /* max-w-4xl */
+    border-bottom: 2px solid #ff6f61;
+    margin: 2rem auto; /* mx-auto mt-8 */
+  }
   
+  .resume-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    border-bottom: 1px solid #000000; /* border-gray-700 */
+    padding-bottom: 0.5rem; /* pb-2 */
+    margin-bottom: 1rem; /* mb-4 */
+
+  }
   
+  .resume-content {
+    background-color: #242323;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
   
+  .download-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block for proper spacing */
+    font-size: 16px; /* Font size */
+    margin: 10px 0; /* Margin for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .download-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
