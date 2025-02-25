@@ -13,7 +13,7 @@ app = FastAPI(title="AI-Powered Career Assistant API")
 # Enable CORS for frontend running on port 3001
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # React frontend URL
+    allow_origins=["http://localhost:3001"],  # React frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
