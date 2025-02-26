@@ -1,5 +1,5 @@
 # main.py
-from fastapi import FastAPI, File, UploadFile, Form, HTTPException
+from fastapi import APIRouter,FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import whisper
@@ -8,15 +8,17 @@ import numpy as np
 import os
 import cohere
 import uuid
-from utils.audio_extract import extract_audio
+from utils.audio_extract1 import extract_audio
 
+
+router = APIRouter(prefix="/video", tags=["interview"])
 
 
 UPLOAD_DIR = "static/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Mount static directory to serve files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # Load Whisper model
 try:
@@ -38,11 +40,8 @@ except Exception as e:
     print(f"Error initializing Cohere client: {str(e)}")
     co = None
 
-@app.get("/")
-async def root():
-    return {"message": "Mock Interview API with Voice Analysis is running"}
 
-@app.post("/video/upload/")
+@router.post("/upload/")
 async def process_video(file: UploadFile = File(...), question: str = Form(...)):
     """Processes the video file, extracts audio, transcribes response, and analyzes performance."""
     try:
@@ -173,6 +172,3 @@ def check_answer_feedback(question, answer):
     response = co.generate(model="command", prompt=prompt, max_tokens=300, temperature=0.7)
     return response.generations[0].text.strip()
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)

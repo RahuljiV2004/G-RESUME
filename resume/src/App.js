@@ -17,8 +17,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/HeroSection'
-import Interview from './components/interview';
-import Test from './components/test';
+// import Interview from './components/interview';
+// import Test from './components/test';
+import MockInterview from './components/test';
 
 const App = () => {
   return (
@@ -33,8 +34,8 @@ const App = () => {
         <Route path="/faq" element={<h1>FAQ Page</h1>} />
         <Route path="/account" element={<h1>My Account Page</h1>} />
         <Route path="/build" element={<h1>Build My Resume Page</h1>} />
-        <Route path='/test' element={<Test/>}/>
-        <Route path="/mock-interview" element={<Interview/>} />
+        <Route path='/mock-interview' element={<MockInterview/>}/>
+        {/* <Route path="/mock-interview" element={<Interview/>} /> */}
       </Routes>
     </Router>
   );
