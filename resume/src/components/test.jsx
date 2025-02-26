@@ -307,9 +307,7 @@ const MockInterview = () => {
   const questions = [
     "Tell me about yourself and your background.",
     "What are your greatest strengths and weaknesses?",
-    "Why are you interested in this position?",
-    "Describe a challenging situation you faced and how you resolved it.",
-    "Do you have any questions for us?"
+    "Why are you interested in this position?"
   ];
 
   useEffect(() => {
