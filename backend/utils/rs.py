@@ -10,11 +10,17 @@ import shutil
 # Disable TensorFlow optimizations
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
-MODEL_PATH = os.path.join(BASE_DIR,"..", "shape_predictor_68_face_landmarks.dat")
-MODEL_PATH = MODEL_PATH.replace("\\", "\\\\")
-predictor = dlib.shape_predictor(MODEL_PATH)
 
+
+
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# # Construct the relative path to the shape_predictor_68_face_landmarks.dat file
+# MODEL_PATH = os.path.join(BASE_DIR, "..", "..", "frontend", "backend", "shape_predictor_68_face_landmarks.dat")
+
+# Normalize the path for Windows (replace single backslashes with double backslashes)
+MODEL_PATH = "D:\\hackathon\\G\\frontend\\backend\\shape_predictor_68_face_landmarks.dat"
+predictor = dlib.shape_predictor(MODEL_PATH)
 # # Load Dlib's shape predictor model
 # predictor = dlib.shape_predictor("C:\\G_Resume\\shape_predictor_68_face_landmarks.dat")
 detector = dlib.get_frontal_face_detector()

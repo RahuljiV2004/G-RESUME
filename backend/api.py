@@ -18,7 +18,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # Enable CORS for frontend running on port 3001
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3001"],  # React frontend URL
+    allow_origins=["http://localhost:3002"],  # React frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
