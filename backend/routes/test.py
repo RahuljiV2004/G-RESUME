@@ -350,6 +350,9 @@ def check_answer_feedback(question, answer):
         return "⚠️ Cohere API Key missing. Cannot generate feedback."
 
     prompt = f"""
+    "You are an AI interview reviewer. Analyse the answer for the given question
+    check correctness in answer with relevance to the question and provide feedback on
+    how the answer can be improvised professionally."\n
     **Question:** {question}
     **Answer:** {answer}
 
@@ -360,5 +363,5 @@ def check_answer_feedback(question, answer):
     - **Fluency Score (X/10)**
     """
 
-    response = co.generate(model="command", prompt=prompt, max_tokens=300, temperature=0.7)
+    response = co.generate(model="command", prompt=prompt, max_tokens=500, temperature=0.7)
     return response.generations[0].text.strip()
