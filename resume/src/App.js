@@ -28,6 +28,7 @@ const App = () => {
       <Routes>
       <Route path="/" element={<Hero/>} />
         <Route path="/templates" element={<h1>Resume Templates Page</h1>} />
+        <Route path="/mock-interview" element={<MockInterview/>}/>
         <Route path="/examples" element={<h1>Resume Examples Page</h1>} />
         <Route path="/cover-letter" element={<h1>Cover Letter Page</h1>} />
         <Route path="/resources" element={<h1>Resources Page</h1>} />

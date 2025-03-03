@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">G Resume</div>
       <ul className="nav-links">
-        <li><Link to="/templates">Mock Interview</Link></li>
+        <li><Link to="/mock-interview ">Mock Interview</Link></li>
         <li><Link to="/examples">Resume Examples</Link></li>
         <li><Link to="/cover-letter">Cover Letter</Link></li>
         <li><Link to="/resources">Resources</Link></li>

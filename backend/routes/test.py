@@ -352,6 +352,8 @@ def check_answer_feedback(question, answer):
     "You are an AI interview reviewer. Analyze the answer for the given question,
     check correctness in answer with relevance to the question and provide feedback on
     how the answer can be improved professionally."\n
+    Just give me direct answers in bulletins without your intros and outro\n
+    
     **Question:** {question}
     **Answer:** {answer}
 

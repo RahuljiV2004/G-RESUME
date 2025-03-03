@@ -1,5 +1,3 @@
-
-
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
@@ -16,6 +14,7 @@ const MockInterview = () => {
   
   const mediaRecorderRef = useRef(null);
   const videoStreamRef = useRef(null);
+  const videoPreviewRef = useRef(null);
   const chunksRef = useRef([]);
 
   // Sample interview questions
@@ -63,6 +62,11 @@ const MockInterview = () => {
           audio: true,
         });
         videoStreamRef.current = stream;
+        
+        // Set the stream to the video preview element
+        if (videoPreviewRef.current) {
+          videoPreviewRef.current.srcObject = stream;
+        }
       }
 
       mediaRecorderRef.current = new MediaRecorder(videoStreamRef.current);
@@ -353,6 +357,18 @@ const MockInterview = () => {
           <div className="mb-4 p-4 bg-gray-100 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Question {currentQuestionIndex + 1} of {questions.length}</h2>
             <p className="text-gray-800">{questions[currentQuestionIndex]}</p>
+          </div>
+          
+          {/* Video preview component */}
+          <div className="mb-4">
+            <video 
+              ref={videoPreviewRef} 
+              className="w-full rounded-lg border border-gray-300 shadow-sm bg-black" 
+              autoPlay 
+              muted
+              playsInline 
+              style={{ maxHeight: "360px" }}
+            />
           </div>
           
           <div className="flex justify-between items-center mb-4">
